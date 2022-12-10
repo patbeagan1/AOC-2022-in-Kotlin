@@ -1,6 +1,7 @@
 package dev.patbeagan.days
 
 import dev.patbeagan.AdventDay
+import java.util.EmptyStackException
 import java.util.Stack
 
 /**
@@ -14,11 +15,18 @@ class Day05 : AdventDay<String, String> {
                 for (i in 0 until it.amount) {
                     crateYard.stacks[it.to - 1].push(crateYard.stacks[it.from - 1].pop())
                 }
-            }catch (e: Exception) {
+                println(crateYard)
+            } catch (e: Exception) {
                 println()
             }
         }
-        return crateYard.stacks.map { it.peek() }.joinToString("")
+        return crateYard.stacks.joinToString("") {
+            try {
+                it.peek()
+            } catch (e: EmptyStackException) {
+                " "
+            }
+        }
     }
 
     override fun part2(input: String) = ""

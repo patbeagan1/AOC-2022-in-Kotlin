@@ -59,29 +59,7 @@ class Day05Test {
                 .obtainFile()
                 .readText()
         )
-        val expected = 569
-        Assert.assertEquals(actual, expected)
-    }
-
-    @Test
-    fun `part 2 sample answer`() {
-        val actual = sub.part2(
-            "Day05_input.txt"
-                .obtainFile()
-                .readText()
-        )
-        val expected = 4
-        Assert.assertEquals(actual, expected)
-    }
-
-    @Test
-    fun `part 2 answer`() {
-        val actual = sub.part2(
-            "Day05_data.txt"
-                .obtainFile()
-                .readText()
-        )
-        val expected = 936
+        val expected = "HDDMGNVG "
         Assert.assertEquals(actual, expected)
     }
 }
