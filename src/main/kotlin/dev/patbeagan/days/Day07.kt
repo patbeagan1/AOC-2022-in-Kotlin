@@ -128,21 +128,24 @@ class Day07 : AdventDay<Int> {
         val files: MutableList<INode>
     ) : INode {
         override val size: Int get() = files.sumOf { it.size }
-        fun prettyFormat(indentation: Int = 0) {
+        fun prettyFormat(
+            indentation: Int = 0,
+            stringBuilder: StringBuilder = StringBuilder()
+        ): String {
             val singleIndent = "  "
-            val indentString = buildString {
-                repeat(indentation + 1) {
-                    append(singleIndent)
+            val indentString = buildString { repeat(indentation) { append(singleIndent) } }
+            return stringBuilder.apply {
+                stringBuilder.appendLine("${indentString}- $name (dir)")
+                files.forEach {
+                    when (it) {
+                        is Dir -> it.prettyFormat(indentation + 1, stringBuilder)
+                        is File -> stringBuilder.appendLine("${indentString}$singleIndent- ${it.name} (file, size=${it.size})")
+                    }
                 }
-            }
-            println("${indentString}- $name (dir)")
-            files.forEach {
-                when (it) {
-                    is Dir -> it.prettyFormat(indentation + 1)
-                    is File -> println("${indentString}$singleIndent- ${it.name} (file, size=${it.size})")
-                }
-            }
+            }.toString().trim()
         }
+
+        fun prettyPrint() = println(prettyFormat())
     }
 
     data class File(
