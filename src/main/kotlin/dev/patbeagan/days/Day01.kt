@@ -5,7 +5,7 @@ import dev.patbeagan.AdventDay
 /**
  * [Day 1](https://adventofcode.com/2022/day/1)
  */
-class Day01 : AdventDay<String, Int> {
+class Day01 : AdventDay<Int> {
     /**
      * Prints out the calorie value
      * of the elf that is holding the most calories.

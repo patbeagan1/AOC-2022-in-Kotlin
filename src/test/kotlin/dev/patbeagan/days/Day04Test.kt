@@ -1,7 +1,8 @@
 package dev.patbeagan.days
 
+import dev.patbeagan.Data.Day04Data
+import dev.patbeagan.Data.Day04Sample
 import dev.patbeagan.days.Day04.*
-import dev.patbeagan.obtainFile
 import org.junit.Test
 import org.testng.Assert
 
@@ -18,51 +19,34 @@ class Day04Test {
             CampSections(range = 6..6) to CampSections(range = 4..6),
             CampSections(range = 2..6) to CampSections(range = 4..8)
         )
-        val actual = sub.parseInput("Day04_input.txt".obtainFile().readText())
-        println(actual)
+        val actual = sub.parseInput(Day04Sample)
         Assert.assertEquals(actual, expected)
     }
 
     @Test
     fun `part 1 sample answer`() {
-        val actual = sub.part1(
-            "Day04_input.txt"
-                .obtainFile()
-                .readText()
-        )
+        val actual = sub.part1(Day04Sample)
         val expected = 2
         Assert.assertEquals(actual, expected)
     }
 
     @Test
     fun `part 1 answer`() {
-        val actual = sub.part1(
-            "Day04_data.txt"
-                .obtainFile()
-                .readText()
-        )
+        val actual = sub.part1(Day04Data)
         val expected = 569
         Assert.assertEquals(actual, expected)
     }
 
     @Test
     fun `part 2 sample answer`() {
-        val actual = sub.part2(
-            "Day04_input.txt"
-                .obtainFile()
-                .readText()
-        )
+        val actual = sub.part2(Day04Sample)
         val expected = 4
         Assert.assertEquals(actual, expected)
     }
 
     @Test
     fun `part 2 answer`() {
-        val actual = sub.part2(
-            "Day04_data.txt"
-                .obtainFile()
-                .readText()
-        )
+        val actual = sub.part2(Day04Data)
         val expected = 936
         Assert.assertEquals(actual, expected)
     }

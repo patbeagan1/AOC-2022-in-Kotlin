@@ -5,7 +5,7 @@ import dev.patbeagan.AdventDay
 /**
  * [Day 3](https://adventofcode.com/2022/day/3)
  */
-class Day03 : AdventDay<String, Int> {
+class Day03 : AdventDay<Int> {
     override fun part1(input: String) = parseInput(input)
         .sumOf { rucksack ->
             rucksack.getMatchingItems().sumOf {

@@ -5,7 +5,7 @@ import dev.patbeagan.AdventDay
 /**
  * [Day 7](https://adventofcode.com/2022/day/7)
  */
-class Day07 : AdventDay<String, Int> {
+class Day07 : AdventDay<Int> {
     override fun part1(input: String): Int = -1
 
     override fun part2(input: String): Int = -1

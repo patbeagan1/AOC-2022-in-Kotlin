@@ -5,7 +5,7 @@ import dev.patbeagan.AdventDay
 /**
  * [Day 6](https://adventofcode.com/2022/day/6)
  */
-class Day06 : AdventDay<String, Int> {
+class Day06 : AdventDay<Int> {
     override fun part1(input: String): Int {
         val buffer = mutableListOf<Char>()
         input.forEachIndexed { index, each ->

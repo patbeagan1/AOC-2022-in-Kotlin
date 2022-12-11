@@ -1,7 +1,7 @@
 package dev.patbeagan.days
 
+import dev.patbeagan.Data
 import dev.patbeagan.days.Day02.*
-import dev.patbeagan.obtainFile
 import org.junit.Test
 import org.testng.Assert
 
@@ -15,11 +15,7 @@ class Day02Test {
             Round(Move.Rock, Move.Paper),
             Round(Move.Scissors, Move.Scissors),
         )
-        val actual: List<Round> = sub.parseInput1(
-            "Day02_input.txt"
-                .obtainFile()
-                .readText()
-        )
+        val actual: List<Round> = sub.parseInput1(Data.Day02Sample)
         Assert.assertEquals(actual, expected)
     }
 
@@ -30,54 +26,34 @@ class Day02Test {
             Move.Paper to Outcome.Loss,
             Move.Scissors to Outcome.Win,
         )
-        val actual: List<Pair<Move, Outcome>> = sub.parseInput2(
-            "Day02_input.txt"
-                .obtainFile()
-                .readText()
-        )
+        val actual = sub.parseInput2(Data.Day02Sample)
         Assert.assertEquals(actual, expected)
     }
 
     @Test
     fun `sample answer`() {
-        val actual = sub.part1(
-            "Day02_input.txt"
-                .obtainFile()
-                .readText()
-        )
+        val actual = sub.part1(Data.Day02Sample)
         val expected = 15
         Assert.assertEquals(actual, expected)
     }
 
     @Test
     fun `part 1 answer`() {
-        val actual = sub.part1(
-            "Day02_data.txt"
-                .obtainFile()
-                .readText()
-        )
+        val actual = sub.part1(Data.Day02Data)
         val expected = 8933
         Assert.assertEquals(actual, expected)
     }
 
     @Test
     fun `part 2 sample answer`() {
-        val actual = sub.part2(
-            "Day02_input.txt"
-                .obtainFile()
-                .readText()
-        )
+        val actual = sub.part2(Data.Day02Sample)
         val expected = 12
         Assert.assertEquals(actual, expected)
     }
 
     @Test
     fun `part 2 answer`() {
-        val actual = sub.part2(
-            "Day02_data.txt"
-                .obtainFile()
-                .readText()
-        )
+        val actual = sub.part2(Data.Day02Data)
         val expected = 11998
         Assert.assertEquals(actual, expected)
     }

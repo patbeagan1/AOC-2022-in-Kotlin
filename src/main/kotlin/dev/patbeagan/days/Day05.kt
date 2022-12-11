@@ -7,7 +7,7 @@ import java.util.Stack
 /**
  * [Day 5](https://adventofcode.com/2022/day/5)
  */
-class Day05 : AdventDay<String, String> {
+class Day05 : AdventDay<String> {
     override fun part1(input: String): String {
         val (crateYard, moveCommands) = parseInput(input)
         moveCommands.forEach {

@@ -5,7 +5,7 @@ import dev.patbeagan.AdventDay
 /**
  * [Day 4](https://adventofcode.com/2022/day/4)
  */
-class Day04 : AdventDay<String, Int> {
+class Day04 : AdventDay<Int> {
     override fun part1(input: String) = parseInput(input)
         .count { it.first.fullyContains(it.second) || it.second.fullyContains(it.first) }
 

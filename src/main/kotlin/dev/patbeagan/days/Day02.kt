@@ -6,7 +6,7 @@ import dev.patbeagan.days.Day02.Move.*
 /**
  * [Day 2](https://adventofcode.com/2022/day/2)
  */
-class Day02 : AdventDay<String, Int> {
+class Day02 : AdventDay<Int> {
     override fun part1(input: String) = parseInput1(input)
         .fold(0) { acc, each ->
             val movePoints = each.self.points

@@ -1,6 +1,6 @@
 package dev.patbeagan.days
 
-import dev.patbeagan.obtainFile
+import dev.patbeagan.Data
 import org.junit.Test
 import org.testng.Assert
 
@@ -16,7 +16,7 @@ class Day06Test {
             "nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg",
             "zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw"
         )
-        val actual = sub.parseInput("Day06_input.txt".obtainFile().readText())
+        val actual = sub.parseInput(Data.Day06Sample)
         Assert.assertEquals(actual, expected)
     }
 
@@ -103,14 +103,14 @@ class Day06Test {
     @Test
     fun `part 1 answer`() {
         val expected = 1804
-        val actual = sub.part1("Day06_data.txt".obtainFile().readText())
+        val actual = sub.part1(Data.Day06Data)
         Assert.assertEquals(actual, expected)
     }
 
     @Test
     fun `part 2 answer`() {
         val expected = 2508
-        val actual = sub.part2("Day06_data.txt".obtainFile().readText())
+        val actual = sub.part2(Data.Day06Data)
         Assert.assertEquals(actual, expected)
     }
 }
