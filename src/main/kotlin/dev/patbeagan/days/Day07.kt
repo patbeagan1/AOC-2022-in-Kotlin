@@ -7,11 +7,20 @@ import java.util.*
  * [Day 7](https://adventofcode.com/2022/day/7)
  */
 class Day07 : AdventDay<Int> {
-    override fun part1(input: String): Int = -1
+    override fun part1(input: String): Int {
+        val dir = parseInput(input)
+        val listOfDirsOfSmallSize = mutableListOf<Dir>()
+        dir.walk {
+            if (it is Dir && it.size < 100000) {
+                listOfDirsOfSmallSize.add(it)
+            }
+        }
+        return listOfDirsOfSmallSize.sumOf { it.size }
+    }
 
     override fun part2(input: String): Int = -1
 
-    fun parseInput(input: String): Dir? {
+    fun parseInput(input: String): Dir {
         val lines = input
             .trim()
             .split("\n")
@@ -79,7 +88,7 @@ class Day07 : AdventDay<Int> {
             }
 
             override fun scan(input: String) {
-                println("ls: $input in ${context.fileSystem.prettyFormat()}")
+                println("ls: $input")
                 when {
                     regexFile.matches(input) -> regexFile.find(input)?.groupValues
                         ?.let { File(it[2], it[1].toInt()) }
@@ -128,6 +137,18 @@ class Day07 : AdventDay<Int> {
         val files: MutableList<INode>
     ) : INode {
         override val size: Int get() = files.sumOf { it.size }
+        fun walk(action: (INode) -> Unit) {
+            files.forEach {
+                when (it) {
+                    is File -> action(it)
+                    is Dir -> {
+                        action(it)
+                        it.walk(action)
+                    }
+                }
+            }
+        }
+
         fun prettyFormat(
             indentation: Int = 0,
             stringBuilder: StringBuilder = StringBuilder()

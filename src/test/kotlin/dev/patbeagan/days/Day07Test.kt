@@ -13,4 +13,18 @@ class Day07Test {
         val actual = sub.parseInput(Data.Day07Sample)
         Assert.assertEquals(expected, actual!!.prettyFormat())
     }
+
+    @Test
+    fun `sample answer`() {
+        val expected = 95437
+        val actual = sub.part1(Data.Day07Sample)
+        Assert.assertEquals(expected, actual)
+    }
+
+    @Test
+    fun `part 1 answer`() {
+        val expected = 1390824
+        val actual = sub.part1(Data.Day07Data)
+        Assert.assertEquals(expected, actual)
+    }
 }
