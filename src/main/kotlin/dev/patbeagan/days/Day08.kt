@@ -27,11 +27,11 @@ class Day08 : AdventDay<Int> {
             val row = trees[y]
             val col = trees.map { it[x] }
 
-            val (left, right) = splitTrees(col, x)
+            val (left, right) = splitTrees(row, x)
             if (left.all { it.height < tree.height }) return true
             if (right.all { it.height < tree.height }) return true
 
-            val (top, bottom) = splitTrees(row, y)
+            val (top, bottom) = splitTrees(col, y)
             if (top.all { it.height < tree.height }) return true
             if (bottom.all { it.height < tree.height }) return true
 
