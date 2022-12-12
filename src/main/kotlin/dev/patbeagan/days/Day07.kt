@@ -23,8 +23,8 @@ class Day07 : AdventDay<Int> {
         val updateSpace = 30_000_000
         val dir = parseInput(input)
         val totalSpace = dir.size
-        val freespace = maxSpace - totalSpace
-        val requiredSpace = updateSpace - freespace
+        val freeSpace = maxSpace - totalSpace
+        val requiredSpace = updateSpace - freeSpace
         val listOfDirs = mutableListOf<Dir>()
         dir.walk {
             if (it is Dir) {
