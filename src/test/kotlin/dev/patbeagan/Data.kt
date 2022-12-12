@@ -32,6 +32,10 @@ object Data {
     val Day07Sample get() = "Day07_input.txt".obtainFile().readText()
     val Day07SampleOutput get() = "Day07_output.txt".obtainFile().readText()
 
+    //Day08
+    val Day08Data get() = "Day08_data.txt".obtainFile().readText()
+    val Day08Sample get() = "Day08_input.txt".obtainFile().readText()
+
     /**
      * Reads lines from the given input txt file.
      */
