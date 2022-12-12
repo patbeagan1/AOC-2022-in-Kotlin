@@ -11,7 +11,7 @@ class Day07Test {
     fun `parsing works as expected`() {
         val expected = Data.Day07SampleOutput
         val actual = sub.parseInput(Data.Day07Sample)
-        Assert.assertEquals(expected, actual!!.prettyFormat())
+        Assert.assertEquals(expected, actual.prettyFormat())
     }
 
     @Test
@@ -25,6 +25,13 @@ class Day07Test {
     fun `part 1 answer`() {
         val expected = 1390824
         val actual = sub.part1(Data.Day07Data)
+        Assert.assertEquals(expected, actual)
+    }
+
+    @Test
+    fun `part 2 answer`() {
+        val expected = 7490863
+        val actual = sub.part2(Data.Day07Data)
         Assert.assertEquals(expected, actual)
     }
 }

@@ -18,7 +18,23 @@ class Day07 : AdventDay<Int> {
         return listOfDirsOfSmallSize.sumOf { it.size }
     }
 
-    override fun part2(input: String): Int = -1
+    override fun part2(input: String): Int {
+        val maxSpace = 70_000_000
+        val updateSpace = 30_000_000
+        val dir = parseInput(input)
+        val totalSpace = dir.size
+        val freespace = maxSpace - totalSpace
+        val requiredSpace = updateSpace - freespace
+        val listOfDirs = mutableListOf<Dir>()
+        dir.walk {
+            if (it is Dir) {
+                listOfDirs.add(it)
+            }
+        }
+        return listOfDirs.minBy {
+            if (it.size < requiredSpace) Int.MAX_VALUE else it.size
+        }.size
+    }
 
     fun parseInput(input: String): Dir {
         val lines = input
