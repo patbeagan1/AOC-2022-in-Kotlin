@@ -1,6 +1,7 @@
 package dev.patbeagan.days
 
 import dev.patbeagan.AdventDay
+import dev.patbeagan.CanTraverse
 import dev.patbeagan.takeUntil
 
 /**
@@ -38,7 +39,7 @@ class Day08 : AdventDay<Int> {
     value class Tree(val height: Int)
 
     @JvmInline
-    value class TreeGrid(private val trees: List<List<Tree>>) {
+    value class TreeGrid(private val trees: List<List<Tree>>) : CanTraverse {
         fun isTreeVisibleAt(x: Int, y: Int): Boolean {
             val tree = trees[y][x]
             TreeScanner(trees)
@@ -54,6 +55,8 @@ class Day08 : AdventDay<Int> {
                 }
         }
 
+        fun walk(action: (tree: Tree, x: Int, y: Int) -> Unit) = trees.traverse(action)
+
         fun scenicScoreAt(x: Int, y: Int): Int {
             val tree = trees[y][x]
             TreeScanner(trees)
@@ -66,14 +69,6 @@ class Day08 : AdventDay<Int> {
                         bottom.takeUntil { it.height < tree.height }.count(),
                     ).fold(1) { acc, each -> each * acc }
                 }
-        }
-
-        fun walk(action: (tree: Tree, x: Int, y: Int) -> Unit) {
-            trees.forEachIndexed { indexY, each ->
-                each.forEachIndexed { indexX, tree ->
-                    action(tree, indexX, indexY)
-                }
-            }
         }
 
         override fun toString(): String = buildString {

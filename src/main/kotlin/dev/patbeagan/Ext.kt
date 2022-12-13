@@ -1,6 +1,5 @@
 package dev.patbeagan
 
-import java.io.File
 import java.math.BigInteger
 import java.security.MessageDigest
 
@@ -19,4 +18,14 @@ inline fun <T> Iterable<T>.takeUntil(predicate: (T) -> Boolean): List<T> {
             break
     }
     return list
+}
+
+interface CanTraverse {
+    fun <T> List<List<T>>.traverse(action: (each: T, x: Int, y: Int) -> Unit) {
+        forEachIndexed { indexY, each ->
+            each.forEachIndexed { indexX, tree ->
+                action(tree, indexX, indexY)
+            }
+        }
+    }
 }
