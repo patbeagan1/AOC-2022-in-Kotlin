@@ -1,6 +1,5 @@
 package dev.patbeagan.days
 
-import dev.patbeagan.AdventDay
 import jdk.jshell.spi.ExecutionControl.NotImplementedException
 
 /**

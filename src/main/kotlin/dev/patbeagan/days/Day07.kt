@@ -1,6 +1,5 @@
 package dev.patbeagan.days
 
-import dev.patbeagan.AdventDay
 import java.util.*
 
 /**

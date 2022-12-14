@@ -1,7 +1,5 @@
 package dev.patbeagan.days
 
-import dev.patbeagan.AdventDay
-
 /**
  * [Day 4](https://adventofcode.com/2022/day/4)
  */

@@ -1,6 +1,5 @@
 package dev.patbeagan.days
 
-import dev.patbeagan.AdventDay
 import dev.patbeagan.days.Day09.Point.Companion.coord
 import java.lang.IllegalArgumentException
 import kotlin.math.atan2
