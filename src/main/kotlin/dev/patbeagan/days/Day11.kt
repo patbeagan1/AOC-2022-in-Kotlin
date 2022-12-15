@@ -6,9 +6,20 @@ import java.lang.IllegalArgumentException
  * [Day 11](https://adventofcode.com/2022/day/11)
  */
 class Day11 : AdventDay<Int> {
-    override fun part1(input: String) = parseInput(input).let {
-        Main(it, Person()).round()
-        22
+    override fun part1(input: String) = parseInput(input).let { monkeyList ->
+        Main(monkeyList, Person()).let { main ->
+            repeat(20) {
+                main.round()
+            }
+            monkeyList.forEach {
+                println("Monkey ${it.id} inspected items ${it.inspectionCount} times.")
+            }
+            monkeyList
+                .sortedBy { it.inspectionCount }
+                .takeLast(2)
+                .fold(1) { acc, each -> acc * each.inspectionCount }
+                .also { println(it) }
+        }
     }
 
     override fun part2(input: String) = 0
@@ -19,10 +30,16 @@ class Day11 : AdventDay<Int> {
         .map { Monkey.parse(it) }
         .also { println(it) }
 
-    class Main(val monkeys: List<Monkey>, val person: Person) {
+    class Main(
+        private val monkeys: List<Monkey>,
+        private val person: Person
+    ) {
         fun round() {
             monkeys.forEach { monkey ->
                 monkey.performTurn(person, monkeys)
+            }
+            monkeys.forEach {
+                println("Monkey ${it.id}: ${it.items}")
             }
         }
     }
@@ -43,13 +60,14 @@ class Day11 : AdventDay<Int> {
         val onTrue: MonkeyAction,
         val onFalse: MonkeyAction,
     ) {
+        var inspectionCount = 0
         private fun performItemInspection(item: Item, person: Person, monkeys: List<Monkey>) {
             //
-            person.worryLevel += item.worryLevel
+            person.worryLevel = item.worryLevel
             println("  Monkey $id inspects an item with a worry level of ${item.worryLevel}.")
             //
             val oldWorryLevel = person.worryLevel
-            person.worryLevel   = operation.interpret(person)
+            person.worryLevel = operation.interpret(person)
             println("    Worry level increases from $oldWorryLevel to ${person.worryLevel}.")
             //
             person.reduceWorryLevel()
@@ -62,10 +80,12 @@ class Day11 : AdventDay<Int> {
             val monkeyAction = if (worryIsDivisible) onTrue else onFalse
 
             monkeyAction.asThrowActionId()?.let {
-                monkeys[it].items.add(item)
+                monkeys[it].items.add(Item(person.worryLevel))
             }
             println("    Item with worry level ${item.worryLevel} is thrown to monkey ${monkeyAction.asThrowActionId()}.")
             println()
+
+            inspectionCount++
         }
 
         fun performTurn(person: Person, monkeys: List<Monkey>) {
