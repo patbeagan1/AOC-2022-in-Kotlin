@@ -31,4 +31,6 @@ interface CanTraverse {
 }
 
 @JvmInline
-value class List2D<T>(val grid: List<List<T>>): CanTraverse
+value class List2D<T>(val grid: List<List<T>>) : CanTraverse {
+    fun traverse(action: (each: T, x: Int, y: Int) -> Unit) = grid.traverse(action)
+}
