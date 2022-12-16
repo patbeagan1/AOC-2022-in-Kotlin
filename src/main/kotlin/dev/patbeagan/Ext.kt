@@ -29,3 +29,6 @@ interface CanTraverse {
         }
     }
 }
+
+@JvmInline
+value class List2D<T>(val grid: List<List<T>>): CanTraverse

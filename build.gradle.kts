@@ -13,6 +13,8 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     implementation(kotlin("stdlib-jdk8"))
     testImplementation("org.testng:testng:7.1.0")
+    // https://mvnrepository.com/artifact/org.jgrapht/jgrapht-core
+    implementation("org.jgrapht:jgrapht-core:1.5.1")
 }
 
 tasks {

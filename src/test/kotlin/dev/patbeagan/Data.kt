@@ -48,6 +48,10 @@ object Data {
     val Day11Data get() = "Day11_data.txt".getData()
     val Day11Sample get() = "Day11_input.txt".getData()
 
+    //Day12
+    val Day12Data get() = "Day12_data.txt".getData()
+    val Day12Sample get() = "Day12_input.txt".getData()
+
     /**
      * Reads lines from the given input txt file.
      */
