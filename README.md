@@ -6,19 +6,19 @@ In this repository, I'll provide solutions for the puzzles using [Kotlin][kotlin
 
 |Day|Problem|Solution|
 |-|-|-|
-|1|TBD|./src/main/dev/patbeagan/days/Day01|
-|2|TBD|./src/main/dev/patbeagan/days/Day02|
-|3|TBD|./src/main/dev/patbeagan/days/Day03|
-|4|TBD|./src/main/dev/patbeagan/days/Day04|
-|5|TBD|./src/main/dev/patbeagan/days/Day05|
-|6|TBD|./src/main/dev/patbeagan/days/Day06|
-|7|TBD|./src/main/dev/patbeagan/days/Day07|
-|8|TBD|./src/main/dev/patbeagan/days/Day08|
-|9|TBD|./src/main/dev/patbeagan/days/Day09|
-|10|TBD|./src/main/dev/patbeagan/days/Day10|
-|11|TBD|./src/main/dev/patbeagan/days/Day11|
-|12|TBD|./src/main/dev/patbeagan/days/Day12|
-|13|TBD|./src/main/dev/patbeagan/days/Day13|
+|1|Calorie Counting|[Solution](./src/main/dev/patbeagan/days/Day01)|
+|2|Rock Paper Scissors|[Solution](./src/main/dev/patbeagan/days/Day02)|
+|3|Rucksack Reorganization|[Solution](./src/main/dev/patbeagan/days/Day03)|
+|4|Camp Cleanup|[Solution](./src/main/dev/patbeagan/days/Day04)|
+|5|Supply Stacks|[Solution](./src/main/dev/patbeagan/days/Day05)|
+|6|Tuning Trouble|[Solution](./src/main/dev/patbeagan/days/Day06)|
+|7|No Space Left On Device|[Solution](./src/main/dev/patbeagan/days/Day07)|
+|8|Treetop Tree House|[Solution](./src/main/dev/patbeagan/days/Day08)|
+|9|Rope Bridge|[Solution](./src/main/dev/patbeagan/days/Day09)|
+|10|Cathode-Ray Tube|[Solution](./src/main/dev/patbeagan/days/Day10)|
+|11|Monkey in the Middle|[Solution](./src/main/dev/patbeagan/days/Day11)|
+|12|Hill Climbing Algorithm|[Solution](./src/main/dev/patbeagan/days/Day12)|
+|13|Distress Signal|[Solution](./src/main/dev/patbeagan/days/Day13)|
 |14|TBD|TBD|
 |15|TBD|TBD|
 |16|TBD|TBD|
