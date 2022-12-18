@@ -4,6 +4,9 @@ Welcome to the Advent of Code[^aoc] Kotlin project created by [patbeagan1][githu
 
 In this repository, I'll provide solutions for the puzzles using [Kotlin][kotlin] language.
 
+<img width="482" alt="Screen Shot 2022-12-18 at 1 08 19 AM" src="https://user-images.githubusercontent.com/10187351/208285960-56aa0062-f397-422c-84d7-0589ac2107f4.png">
+
+
 |Day|Problem|Solution|
 |-|-|-|
 |1|Calorie Counting|[Solution](./src/main/kotlin/dev/patbeagan/days/Day01.kt)|
