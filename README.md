@@ -19,18 +19,6 @@ In this repository, I'll provide solutions for the puzzles using [Kotlin][kotlin
 |11|Monkey in the Middle|[Solution](./src/main/kotlin/dev/patbeagan/days/Day11.kt)|
 |12|Hill Climbing Algorithm|[Solution](./src/main/kotlin/dev/patbeagan/days/Day12.kt)|
 |13|Distress Signal|[Solution](./src/main/kotlin/dev/patbeagan/days/Day13.kt)|
-|14|TBD|TBD|
-|15|TBD|TBD|
-|16|TBD|TBD|
-|17|TBD|TBD|
-|18|TBD|TBD|
-|19|TBD|TBD|
-|20|TBD|TBD|
-|21|TBD|TBD|
-|22|TBD|TBD|
-|23|TBD|TBD|
-|24|TBD|TBD|
-|25|TBD|TBD|
 
 If you are new to kotlin, or are stuck with Kotlin-specific questions or anything related to this template, check out
 the following resources:
