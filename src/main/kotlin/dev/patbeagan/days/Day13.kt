@@ -11,4 +11,31 @@ class Day13 : AdventDay<Int> {
     fun parseInput(input: String) = input
         .trim()
         .split("\n")
+
+    @JvmInline
+    value class PacketPair(val value: Pair<Packet<List<*>>, Packet<List<*>>>)
+
+    @JvmInline
+    value class Packet<T>(private val value: List<T>) //: Comparable<Packet<*>> {
+//        override fun compareTo(other: Packet<*>): Int {
+//            when {
+//                value.firstOrNull() is Int && other.value.firstOrNull() is Int -> {
+//
+//                    return
+//                }
+//                value.firstOrNull() is List<*> && other.value.firstOrNull() is Int -> {
+//
+//
+//                }
+//                value.firstOrNull() is Int && other.value.firstOrNull() is List<*> -> {
+//
+//
+//                }
+//                value.firstOrNull() is List<*> && other.value.firstOrNull() is List<*> -> {
+//
+//
+//                }
+//            }
+//        }
+ //   }
 }
