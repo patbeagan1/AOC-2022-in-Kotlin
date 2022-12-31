@@ -153,39 +153,37 @@ class Day11 : AdventDay<Int> {
         }
 
         companion object {
-            fun parse(input: String): Monkey {
-                return Monkey(
-                    regexMonkeyId.find(input)
+            fun parse(input: String): Monkey = Monkey(
+                regexMonkeyId.find(input)
+                    ?.groupValues
+                    ?.get(1)
+                    ?.toInt()!!,
+                regexStartingItems.find(input)
+                    ?.groupValues
+                    ?.get(1)
+                    ?.split(",")
+                    ?.map { Item(it.trim().toInt()) }
+                    ?.toMutableList()!!,
+                Operation(
+                    regexOperation.find(input)
                         ?.groupValues
-                        ?.get(1)
-                        ?.toInt()!!,
-                    regexStartingItems.find(input)
+                        ?.get(1)!!
+                ),
+                MonkeyTest(
+                    regexTest.find(input)
                         ?.groupValues
-                        ?.get(1)
-                        ?.split(",")
-                        ?.map { Item(it.trim().toInt()) }
-                        ?.toMutableList()!!,
-                    Operation(
-                        regexOperation.find(input)
-                            ?.groupValues
-                            ?.get(1)!!
-                    ),
-                    MonkeyTest(
-                        regexTest.find(input)
-                            ?.groupValues
-                            ?.get(1)!!
-                    ),
-                    MonkeyAction(
-                        regexOnTrue.find(input)
-                            ?.groupValues?.get(1)!!
-                    ),
-                    MonkeyAction(
-                        regexOnFalse.find(input)
-                            ?.groupValues
-                            ?.get(1)!!
-                    ),
-                )
-            }
+                        ?.get(1)!!
+                ),
+                MonkeyAction(
+                    regexOnTrue.find(input)
+                        ?.groupValues?.get(1)!!
+                ),
+                MonkeyAction(
+                    regexOnFalse.find(input)
+                        ?.groupValues
+                        ?.get(1)!!
+                ),
+            )
 
             private val regexMonkeyId = Regex("\\w*Monkey (\\d*):")
             private val regexStartingItems = Regex("\\w*Starting items: (.*)")

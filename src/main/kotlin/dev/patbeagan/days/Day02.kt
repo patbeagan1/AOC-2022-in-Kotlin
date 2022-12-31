@@ -23,22 +23,15 @@ class Day02 : AdventDay<Int> {
 
     fun parseInput1(input: String): List<Round> = getLines(input)
         .map { s ->
-            s.split(
-                " "
-            ).map {
-                Move.from(it)!!
-            }.let {
-                Round(it[1], it[0])
-            }
+            s.split(" ")
+                .map { Move.from(it)!! }
+                .let { Round(it[1], it[0]) }
         }
 
     fun parseInput2(input: String): List<Pair<Move, Outcome>> = getLines(input)
         .map { s ->
-            s.split(
-                " "
-            ).let {
-                Move.from(it[0])!! to Outcome.from(it[1])!!
-            }
+            s.split(" ")
+                .let { Move.from(it[0])!! to Outcome.from(it[1])!! }
         }
 
     private fun getLines(input: String) = input
@@ -53,9 +46,7 @@ class Day02 : AdventDay<Int> {
     /**
      * A single move.
      */
-    enum class Move(
-        val points: Int,
-    ) {
+    enum class Move(val points: Int) {
         Rock(1),
         Paper(2),
         Scissors(3);
